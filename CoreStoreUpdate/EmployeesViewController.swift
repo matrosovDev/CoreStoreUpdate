@@ -38,8 +38,7 @@ class EmployeesViewController: UIViewController, UITableViewDataSource {
             case let .success(employee):
                 self.updateCompnay(with: employee)
                 self.textField.text = nil
-                self.employees.append(employee)
-                self.tableView.reloadData()
+                self.fetchEmployees()
                 break
             case let .failure(error):
                 print(error)

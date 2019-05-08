@@ -39,16 +39,16 @@ class CompanyService {
                
                 let editCompany = transaction.edit(company)!
                 
-                editCompany.name = company.name
-                
-                if let unwrappedEmployees = company.employees {
-                    for employee in unwrappedEmployees {
-                        if let castedEmployee = employee as? Employee {
-                            let editEmployee = transaction.edit(castedEmployee)!
-                            editCompany.addToEmployees(editEmployee)
-                        }
-                    }
-                }
+//                editCompany.name = company.name
+//                
+//                if let unwrappedEmployees = company.employees {
+//                    for employee in unwrappedEmployees {
+//                        if let castedEmployee = employee as? Employee {
+//                            let editEmployee = transaction.edit(castedEmployee)!
+//                            editCompany.addToEmployees(editEmployee)
+//                        }
+//                    }
+//                }
                 
                 return editCompany
         },
