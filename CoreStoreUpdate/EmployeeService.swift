@@ -32,9 +32,4 @@ class EmployeeService {
                 completion(.failure(error))
         })
     }
-    
-    func fetchEmployees() -> [Employee]? {
-        let employee = try? CoreStore.fetchAll(From<Employee>())
-        return employee
-    }
 }

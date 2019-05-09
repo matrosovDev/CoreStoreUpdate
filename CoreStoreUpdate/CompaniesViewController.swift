@@ -36,7 +36,9 @@ class CompaniesViewController: UIViewController, UITableViewDataSource, UITableV
             switch result {
             case let .success(company):
                 self.textField.text = nil
-                self.fetchCompanies()
+                //self.fetchCompanies()
+                self.companies.append(company)
+                self.tableView.reloadData()
                 break
             case let .failure(error):
                 print(error)

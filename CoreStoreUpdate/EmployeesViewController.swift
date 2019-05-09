@@ -64,7 +64,11 @@ class EmployeesViewController: UIViewController, UITableViewDataSource {
     }
     
     func fetchEmployees() {
-        if let unwrappedEmployees = employeeService.fetchEmployees() {
+        guard let unwrappedCompanyId = company?.id else {
+            return
+        }
+        
+        if let unwrappedEmployees = companyService.fetchEmployees(with: unwrappedCompanyId) {
             employees = unwrappedEmployees
             
             tableView.reloadData()
